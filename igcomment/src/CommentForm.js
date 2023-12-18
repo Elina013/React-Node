@@ -7,12 +7,12 @@ const CommentForm = ({ onAddComment }) => {
 
   const handleAddComment = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/api/comments', {
+      const response = await axios.post('http://localhost:3000/api/comments', {
         text: commentText,
-        // Lägg till andra nödvändiga fält här (användar-ID, bild-ID, etc.)
+        // Legg til andra nødvendiga felt hær (anvændar-ID, bild-ID, etc.)
       });
-      onAddComment(response.data); // Uppdatera lokalt tillstånd efter att kommentaren har lagts till
-      setCommentText(''); // Rensa inmatningsfältet
+      onAddComment(response.data); // Uppdatera lokalt tillstånd efter att kommentaren har lagts til
+      setCommentText(''); // Rensa inmatningsfeltet
     } catch (error) {
       console.error('Error adding comment:', error);
     }
@@ -21,11 +21,11 @@ const CommentForm = ({ onAddComment }) => {
   return (
     <div>
       <input
-        type="text"
+        type="text" placeholder='Komentar...'
         value={commentText}
         onChange={(e) => setCommentText(e.target.value)}
       />
-      <button onClick={handleAddComment}>Lägg till kommentar</button>
+      <button onClick={handleAddComment}>Legg til kommentar</button>
     </div>
   );
 };
