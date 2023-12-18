@@ -1,0 +1,17 @@
+body {
+    background-image:linear-gradient(yellow, orange, red) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    color: black;
+}
+
+button{
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
+}
