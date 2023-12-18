@@ -1,0 +1,21 @@
+model Comment {
+  id        Int      @id @default(autoincrement())
+  text      String
+  timestamp DateTime @default(now())
+  userId    Int
+  imageId   Int
+  User      User     @relation(fields: [userId], references: [id])
+  Image     Image    @relation(fields: [imageId], references: [id])
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  username String
+  // Lägg till andra användarattribut som behövs
+}
+
+model Image {
+  id   Int      @id @default(autoincrement())
+  url  String
+  // Lägg till andra bildattribut som behövs
+}
